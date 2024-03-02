@@ -48,15 +48,16 @@ def main():
         text = extract_text(uploaded_file)
         st.write("### Ask your PDF:")
         
-        question_input_key = "question_input"
+        question_input_key = 0  # Initialize key counter
         while True:
             # Ask a question
-            question = st.text_input("You: Ask your question", key=question_input_key)
+            question = st.text_input("You: Ask your question", key=f"question_input_{question_input_key}")
             
             if question:
                 # Answer the question
                 answer = answer_question(question, text)
                 st.write("ChatPDF: " + answer)
+                question_input_key += 1  # Increment key counter
             else:
                 break
 
