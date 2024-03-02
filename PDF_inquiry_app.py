@@ -15,7 +15,7 @@ import streamlit as st
 import PyPDF4
 from nltk.tokenize import sent_tokenize
 
-#nltk.download('punkt')
+nltk.download('punkt')
 
 # Function to extract text from PDF
 def extract_text(uploaded_file):
