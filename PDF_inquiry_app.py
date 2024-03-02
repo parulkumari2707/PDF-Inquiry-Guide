@@ -13,9 +13,10 @@ Original file is located at
 
 import streamlit as st
 import PyPDF4
+import nltk
+nltk.download('punkt')
 from nltk.tokenize import sent_tokenize
 
-nltk.download('punkt')
 
 # Function to extract text from PDF
 def extract_text(uploaded_file):
