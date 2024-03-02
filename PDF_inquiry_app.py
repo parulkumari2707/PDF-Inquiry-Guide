@@ -7,13 +7,15 @@ Original file is located at
     https://colab.research.google.com/drive/1fjtcaAIX4sMDWLrtxc_C5uu79BIgUy1W
 """
 
-!pip install streamlit
-!pip install PyPDF4
-!pip install nltk
+#!pip install streamlit
+#!pip install PyPDF4
+#!pip install nltk
 
 import streamlit as st
 import PyPDF4
 from nltk.tokenize import sent_tokenize
+
+nltk.download('punkt')
 
 # Function to extract text from PDF
 def extract_text(uploaded_file):
@@ -36,14 +38,14 @@ def answer_question(question, text):
 
 # Streamlit app
 def main():
-    st.title("ChatPDF: Your Personal PDF Assistant")
+    st.title("PDF-Inquiry-Guide")
 
     # File uploader
     uploaded_file = st.file_uploader("Upload a PDF", type=["pdf"])
 
     if uploaded_file is not None:
         text = extract_text(uploaded_file)
-        st.write("### Chat with your PDF:")
+        st.write("### Ask your PDF:")
 
         while True:
             # Ask a question
@@ -52,7 +54,7 @@ def main():
             if question:
                 # Answer the question
                 answer = answer_question(question, text)
-                st.write("ChatPDF: " + answer)
+                st.write("PDF says: " + answer)
             else:
                 break
 
