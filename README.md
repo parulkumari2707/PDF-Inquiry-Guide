@@ -13,9 +13,9 @@ To run the app locally, follow these steps:
 1. Clone this repository to your local machine.
 2. Navigate to the project directory.
 3. Install the required Python packages by running:
-   ``` bash pip install -r requirements.txt```
+   ` pip install -r requirements.txt`
 5. Run the Streamlit app by executing:
-   ``` bash streamlit run PDF_inquiry_app.py```
+   ` streamlit run PDF_inquiry_app.py`
 7. Access the app in your web browser at `http://localhost:8501 `.
 
 Usage
