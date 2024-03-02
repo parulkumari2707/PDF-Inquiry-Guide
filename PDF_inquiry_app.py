@@ -47,15 +47,16 @@ def main():
     if uploaded_file is not None:
         text = extract_text(uploaded_file)
         st.write("### Ask your PDF:")
-
+        
+        question_input_key = "question_input"
         while True:
             # Ask a question
-            question = st.text_input("You: Ask your question")
-
+            question = st.text_input("You: Ask your question", key=question_input_key)
+            
             if question:
                 # Answer the question
                 answer = answer_question(question, text)
-                st.write("PDF says: " + answer)
+                st.write("ChatPDF: " + answer)
             else:
                 break
 
